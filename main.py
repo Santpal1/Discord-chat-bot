@@ -5,10 +5,13 @@ from discord import Intents, Client, Message
 from responses import get_response
 
 
+print("Environment Variables in Railway:")
+for key, value in os.environ.items():
+    print(f"{key}={value}")
 
-
-load_dotenv()
 TOKEN: Final = os.getenv('DISCORD_TOKEN')
+
+
 
 if not TOKEN:
     raise ValueError("❌ DISCORD_TOKEN is not set. Make sure it is correctly configured in Railway.")
