@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 from discord import Intents, Client, Message
 from responses import get_response
-from keep_alive import keep_alive
+
 
 
 
@@ -46,8 +46,6 @@ async def on_message(message : Message) -> None:
     await send_message(message, user_message)
     
 def main() -> None:
-    keep_alive()
-
     client.run(token = TOKEN)
     
     
