@@ -10,6 +10,12 @@ from responses import get_response
 load_dotenv()
 TOKEN: Final = os.getenv('DISCORD_TOKEN')
 
+if not TOKEN:
+    raise ValueError("❌ DISCORD_TOKEN is not set. Make sure it is correctly configured in Railway.")
+
+print(f"DISCORD_TOKEN: {TOKEN}")
+
+
 intents: Intents = Intents.default()
 intents.message_content = True
 client: Client = Client(intents=intents)
